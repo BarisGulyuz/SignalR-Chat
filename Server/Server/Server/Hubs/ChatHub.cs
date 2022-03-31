@@ -7,7 +7,7 @@ namespace Server.Hubs
     {
         static List<ClientUser> clientUsers = new();
         static List<Message> messages = new();
-        static List<PersonelMessages> personalMessages = new();
+        static List<PersonalMessages> personalMessages = new();
         public async Task GetName(string name)
         {
             ClientUser clientUser = new ClientUser
@@ -44,7 +44,7 @@ namespace Server.Hubs
         {
             ClientUser senderUser = clientUsers.FirstOrDefault(predicate: x => x.ConnectionId == Context.ConnectionId);
             ClientUser recieverUser = clientUsers.FirstOrDefault(predicate: x => x.Name == name);
-            personalMessages.Add(new PersonelMessages
+            personalMessages.Add(new PersonalMessages
             {
                 SenderId = senderUser.ConnectionId,
                 SenderName = senderUser.Name,
@@ -54,7 +54,7 @@ namespace Server.Hubs
                 Date = DateTime.Now.ToShortTimeString()
 
             });
-            List<PersonelMessages> personelMessagesToSend = personalMessages.Where(x => x.RecieverId == recieverUser.ConnectionId).ToList();
+            List<PersonalMessages> personelMessagesToSend = personalMessages.Where(x => x.RecieverId == recieverUser.ConnectionId).ToList();
             await Clients.Client(recieverUser.ConnectionId).SendAsync("getPersonalMessages", personelMessagesToSend);
         }
 

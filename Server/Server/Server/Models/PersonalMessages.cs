@@ -1,6 +1,6 @@
 ﻿namespace Server.Models
 {
-    public class PersonelMessages
+    public class PersonalMessages
     {
         public string SenderId { get; set; }
         public string SenderName { get; set; }
