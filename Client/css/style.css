@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css?family=Space+Mono:400,400i,700,700i');
+
+*{
+  box-sizing:border-box;
+  font-family: 'Space Mono', monospace;
+}
+
+body{
+  background: linear-gradient(128deg,#6e8be6,#dce2ff,#786ec9,#dee2e6,#dae0e5,#f8f9fa);
+  background-size: 360% 360%;
+  animation: gradient-animation 48s ease infinite;
+}
+
+h4{
+    text-align: center;
+}
+#username{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 0 15px;
+    margin: 10px 0;
+    font-size: 16px;
+    font-family: 'Space Mono', monospace;
+}
+
+#username:focus{
+    outline: 0;
+}
+
+#username:invalid{
+    border: 3px solid salmon;
+    animation: shake 300ms;
+}
+
+#loginButton{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 0 15px;
+    margin: 10px 0;
+    font-size: 16px;
+    font-family: 'Space Mono', monospace;
+    background-color: #eee29e;
+    color: #000;
+    cursor: pointer;
+}
+#loginButton:hover{
+    outline: none;
+    background-color: #9da9ed;
+    color: #fff;
+}
+
+#userMessage:invalid{
+  border: 3px solid salmon;
+  animation: shake 300ms;
+}
+
+.list-group-item{
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform ease-in-out 0.2s;
+}
+
+.list-group-item:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.login-container{
+  margin-top: 30%;
+  width:500px;
+  padding: 30px 15px;
+  background-color: #fff;
+  box-shadow: 0 10px 5px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+
+.online{
+    background-color: green;
+    color: transparentd;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+
+.message{
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 0 15px;
+    margin: 10px 0;
+    background-color: #fff;
+    box-shadow: 0 10px 5px rgba(0, 0, 0, 0.4);
+    font-size: 16px;
+    font-family: 'Space Mono', monospace;
+    color: #000;
+    cursor: pointer;
+}
+
+.message .message-top{
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.message .message-content{
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.font-span{
+    font-size: 16px !important;
+    font-family: 'Space Mono', monospace;
+}
+
+
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes shake {
+    0% {
+     transform: translateX(4px);
+    }
+    50% {
+        transform: translateX(-4px);
+    }
+    100% {
+        transform: translateX(4px);
+    }
+  }
+
+  
